@@ -15,10 +15,10 @@ pass_input=driver.find_element_by_id('txtUserPwd')#找到输入密码的框框
 login_button=driver.find_element_by_id('btnLogon')#找到登录按钮
 
 name_input.clear()
-name_input.send_keys("16wpzhou2")#填写用户名
+name_input.send_keys("")#填写用户名
 time.sleep(0.1)
 pass_input.clear()
-pass_input.send_keys("Zwp123123")#填写密码
+pass_input.send_keys("")#填写密码
 time.sleep(0.1)
 login_button.click()#点击登录
 
