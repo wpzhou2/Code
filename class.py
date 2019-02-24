@@ -1,4 +1,4 @@
-#爬汕大课程
+#爬汕大课程表
 
 import time
 from selenium import webdriver
