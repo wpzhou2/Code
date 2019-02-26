@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <style>
+        body{
+            max-width:800px;
+            margin:20px auto;
+        }
+        .kongwei{
+            margin: 3px;
+        }
+    </style>
+    <title>stu-nav</title>
+</head>
+<body>
+    <br>
+    <div class="text-center" style="font-size: large;">
+        <span style="font-size: xx-large;font-weight: bolder;font-family: 楷体" >富兰克林—</span>
+        我未曾见过一个<b style="color: red">早起</b>勤奋谨慎诚实的人抱怨命运不好；<br>良好的品格，优良的习惯，坚强的意志，是不会被假设所谓的命运击败的。
+    </div>
+    <br>
+    <br>
+
+    <div class="row app">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" @keydown="baiduKeydown($event)" v-model="baiduKey" placeholder="人生一世">
+                <span class="input-group-btn">
+                        <button class="btn btn-default " v-on:click="baiduSearch" type="button">baidu</button>
+                    </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" @keydown="googleKeydown($event)" placeholder="草木一秋" v-model="googleKey">
+                <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" v-on:click="googleSearch">google</button>
+                    </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+    <br>
+    <br>
+
+    <div class="well">
+        <a href="http://space.bilibili.com/69205409?"  class="btn btn-default kongwei" target="_blank">b站</a>
+        <a href="https://music.163.com/"  class="btn btn-info kongwei" target="_blank">网易云音乐</a>
+        <a href="http://www.duokan.com/u/mybook"  class="btn btn-warning kongwei" target="_blank">多看</a>
+        <a href="https://www.csdn.net/"  class="btn btn-danger kongwei" target="_blank">CSDN</a>
+        <a href="https://www.bootcdn.cn/"  class="btn btn-warning kongwei" target="_blank">BootCDN</a>
+        <a href="https://www.zhihu.com/"  class="btn btn-default kongwei" target="_blank">知乎</a>
+        <a href="https://weibo.com/u/3904325840/home?wvr=5"  class="btn btn-danger kongwei" target="_blank">微博</a>
+        <a href="https://cn.bing.com/dict/"  class="btn btn-info kongwei" target="_blank">必应词典</a>
+        <a href="https://tieba.baidu.com/index.html"  class="btn btn-default kongwei" target="_blank">百度贴吧</a>
+        <a href="https://www.oschina.net/"  class="btn btn-success kongwei" target="_blank">开源中国</a>
+        <a href="https://juejin.im/"  class="btn btn-default kongwei" target="_blank">掘金</a>
+        <a href="https://www.jianshu.com/"  class="btn btn-danger kongwei" target="_blank">简书</a>
+        <a href="https://github.com/"  class="btn btn-default kongwei" target="_blank">github</a>
+        <a href="https://www.taobao.com/"  class="btn btn-warning kongwei" target="_blank">淘宝</a>
+        <a href="https://www.jd.com/"  class="btn btn-danger kongwei" target="_blank">京东</a>
+        <a href="https://www.itjc8.com/"  class="btn btn-success kongwei" target="_blank">IT教程</a>
+        <a href="https://d.stulip.org/"  class="btn btn-success kongwei" target="_blank">郁金香</a>
+        <a href="http://phoenix.stu.edu.cn/BT/torrent.aspx"  class="btn btn-primary kongwei" target="_blank">金凤</a>
+        <a href="https://my.stu.edu.cn/discussion/my-courses#%2Fmy-courses"  class="btn btn-danger kongwei" target="_blank">mystu</a>
+        <a href="http://credit.stu.edu.cn/"  class="btn btn-default kongwei" target="_blank">学分制</a>
+        <a href="http://a.stu.edu.cn/ac_portal/20170602150308/pc.html?template=20170602150308&type=logout&username=16wpzhou2&tabs=pwd"  class="btn btn-primary kongwei" target="_blank">校园网</a>
+		<a href="http://www.lib.stu.edu.cn/"  class="btn btn-info kongwei" target="_blank">图书馆</a>
+		<a href="http://oa.stu.edu.cn/login/Login.jsp?logintype=1"  class="btn btn-success kongwei" target="_blank">办公自动化</a>
+		<a href="https://partner.outlook.cn/owa/?realm=stu.edu.cn&exsvurl=1&ll-cc=2052&modurl=0"  class="btn btn-primary kongwei" target="_blank">汕大邮箱</a>
+    </div>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.js" ></script>
+
+<script>
+    new Vue({
+        el:".app",
+        data:{
+            baiduKey:'',//搜索的关键词
+            googleKey:'',
+        },
+        methods:{
+            baiduKeydown(event){
+                if(event.keyCode==13){
+                    //如果你按的是enter，那么就跳转到百度搜索结果
+                    window.open("https://www.baidu.com/s?ie=UTF-8&wd="+this.baiduKey);
+                }
+
+            },
+            baiduSearch:function () {
+                window.open("https://www.baidu.com/s?ie=UTF-8&wd="+this.baiduKey);
+            },
+            googleKeydown(event){
+                if(event.keyCode==13){
+                    //如果你按的是enter，那么就跳转到百度搜索结果
+                    window.open("https://www.google.com/search?ei=Ro1iXKeZFYHv-Qaiq5bYDg&q="+this.googleKey+"&oq="+this.googleKey+"&gs_l=psy-ab.3...19091.20223..20527...0.0..0.107.586.4j2......0....1..gws-wiz.....0..0j0i131j0i3j0i10.SL-QUX5Y6Fg");
+                }
+
+            },
+            googleSearch:function () {
+                window.open("https://www.google.com/search?ei=Ro1iXKeZFYHv-Qaiq5bYDg&q="+this.googleKey+"&oq="+this.googleKey+"&gs_l=psy-ab.3...19091.20223..20527...0.0..0.107.586.4j2......0....1..gws-wiz.....0..0j0i131j0i3j0i10.SL-QUX5Y6Fg");
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>
