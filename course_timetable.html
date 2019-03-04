@@ -218,10 +218,10 @@
           this.getInfo();
         },
 
-        getInfo() { // 发起get请求
+        getInfo() { 
           $("td").css("background-color","white");
           $("td").text("");
-          
+          // 发起get请求
           this.$http.get(this.url).then(function (result) {
               // 通过 result.body 拿到服务器返回的成功的数据
               console.log(result.body);
@@ -381,10 +381,7 @@
 "major": "计算机科学与技术(2016)                                                          ",
 "id": 92704
 }
-]
-              // var re =JSON.stringify(json);//先转成字符串
-              // this.res=JSON.parse(re);//再转成数组
-              // console.log(this.res);
+];
 
               //遍历课程列表
               for(var i=0;i<this.res.length;i++){
@@ -442,10 +439,6 @@
       }
     });
   </script>
-    
-    
-    
-
 </body>
 
 </html>
