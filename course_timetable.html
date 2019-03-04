@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    body{
+      max-width: 70%;
+      margin:40px auto;
+    }
+    table{
+      border:0px;
+    }
+  </style>
+  <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+  <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" v-model="studentKey" placeholder="何时得遂田园乐，睡到人间熟饭时" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" @click="searchByStudentName">姓名搜索</button>
+          <button class="btn btn-outline-secondary" type="button" @click="searchByStudentID">学号搜索</button>
+          <button class="btn btn-outline-secondary" type="button" @click="getMy">我的课程</button>
+        </div>
+    </div>
+    <br><br>
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr >
+          <th scope="col" style="width:12.8%">时间</th>
+          <th scope="col" style="width:12.8%">周一</th>
+          <th scope="col" style="width:12.8%">周二</th>
+          <th scope="col" style="width:12.8%">周三</th>
+          <th scope="col" style="width:12.8%">周四</th>
+          <th scope="col" style="width:12.8%">周五</th>
+          <th scope="col"  style="width:12.8%">周六</th>
+          <th scope="col"  style="width:12.8%">周日</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td id="table-1-1"></td>
+          <td id="table-1-2"></td>
+          <td id="table-1-3"></td>
+          <td id="table-1-4"></td>
+          <td id="table-1-5"></td>
+          <td id="table-1-6"></td>
+          <td id="table-1-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td id="table-2-1"></td>
+            <td id="table-2-2"></td>
+            <td id="table-2-3"></td>
+            <td id="table-2-4"></td>
+            <td id="table-2-5"></td>
+            <td id="table-2-6"></td>
+            <td id="table-2-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td id="table-3-1"></td>
+            <td id="table-3-2"></td>
+            <td id="table-3-3"></td>
+            <td id="table-3-4"></td>
+            <td id="table-3-5"></td>
+            <td id="table-3-6"></td>
+            <td id="table-3-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td id="table-4-1"></td>
+            <td id="table-4-2"></td>
+            <td id="table-4-3"></td>
+            <td id="table-4-4"></td>
+            <td id="table-4-5"></td>
+            <td id="table-4-6"></td>
+            <td id="table-4-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td id="table-5-1"></td>
+            <td id="table-5-2"></td>
+            <td id="table-5-3"></td>
+            <td id="table-5-4"></td>
+            <td id="table-5-5"></td>
+            <td id="table-5-6"></td>
+            <td id="table-5-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td id="table-6-1"></td>
+            <td id="table-6-2"></td>
+            <td id="table-6-3"></td>
+            <td id="table-6-4"></td>
+            <td id="table-6-5"></td>
+            <td id="table-6-6"></td>
+            <td id="table-6-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td id="table-7-1"></td>
+            <td id="table-7-2"></td>
+            <td id="table-7-3"></td>
+            <td id="table-7-4"></td>
+            <td id="table-7-5"></td>
+            <td id="table-7-6"></td>
+            <td id="table-7-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td id="table-8-1"></td>
+            <td id="table-8-2"></td>
+            <td id="table-8-3"></td>
+            <td id="table-8-4"></td>
+            <td id="table-8-5"></td>
+            <td id="table-8-6"></td>
+            <td id="table-8-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td id="table-9-1"></td>
+            <td id="table-9-2"></td>
+            <td id="table-9-3"></td>
+            <td id="table-9-4"></td>
+            <td id="table-9-5"></td>
+            <td id="table-9-6"></td>
+            <td id="table-9-7"></td>
+        </tr>
+                     
+    
+        <tr>
+            <th scope="row">0</th>
+            <td id="table-0-1"></td>
+            <td id="table-0-2"></td>
+            <td id="table-0-3"></td>
+            <td id="table-0-4"></td>
+            <td id="table-0-5"></td>
+            <td id="table-0-6"></td>
+            <td id="table-0-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">A</th>
+            <td id="table-A-1"></td>
+            <td id="table-A-2"></td>
+            <td id="table-A-3"></td>
+            <td id="table-A-4"></td>
+            <td id="table-A-5"></td>
+            <td id="table-A-6"></td>
+            <td id="table-A-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">B</th>
+            <td id="table-B-1"></td>
+            <td id="table-B-2"></td>
+            <td id="table-B-3"></td>
+            <td id="table-B-4"></td>
+            <td id="table-B-5"></td>
+            <td id="table-B-6"></td>
+            <td id="table-B-7"></td>
+        </tr>
+        <tr>
+            <th scope="row">C</th>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+            <td id="table-C-1"></td>
+        </tr>
+        
+
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script>
+
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        res:"",
+        studentName:"",
+        studentID:"",
+        studentKey:"",
+        url:""
+      },
+      methods: {
+        //给每一门课随机选一个颜色作为背景颜色
+        getColor(){
+            colors=["LightGrey","LightGreen","LightYellow","LightSteelBlue","LightBlue",
+            "LightCyan","LightPink","FloralWhite","Pink","Feldspar","DarkGray","HoneyDew","MediumPurple","Wheat"];
+            var num=Math.floor(Math.random()*14+1);
+            return colors[num];
+        },
+        
+        searchByStudentName(){
+          this.url="http://localhost:2020/getCoursesByStudentName/"+this.studentKey;
+          this.getInfo();
+        },
+
+        searchByStudentID(){
+          this.url="http://localhost:2020/getCoursesByStudentID/"+this.studentKey;
+          this.getInfo();
+        },
+
+        getInfo() { // 发起get请求
+          $("td").css("background-color","white");
+          $("td").text("");
+          
+          this.$http.get(this.url).then(function (result) {
+              // 通过 result.body 拿到服务器返回的成功的数据
+              console.log(result.body);
+              var re =JSON.stringify(result.body);//先转成字符串
+              this.res=JSON.parse(re);//再转成数组
+              console.log(this.res);
+
+              //遍历课程列表
+              for(var i=0;i<this.res.length;i++){
+                  //将每一项课程的上课时间分割出来
+                  var listTime = this.res[i].classTime.split("，");
+                  //console.log(typeof(this.res[i].className));
+                  console.log(listTime);
+                  //console.log(listTime.length);
+                  //上课时间列表第一个item是1-16周，故用不到，后面才是具体的上课时间
+                  for(var j=1;j<listTime.length;j++){
+                    var y="";
+                    var x="";
+                    //例如，时间列表：1-16周，周三(34节)，周五(67节)
+                    if(listTime[j][1]=='一'){
+                      y="1";//星期几
+                    }
+                    if(listTime[j][1]=='二'){
+                      y="2";//星期几
+                    }
+                    if(listTime[j][1]=='三'){
+                      y="3";//星期几
+                    }
+                    if(listTime[j][1]=='四'){
+                      y="4";//星期几
+                    }
+                    if(listTime[j][1]=='五'){
+                      y="5";//星期几
+                    }
+
+                    var color = this.getColor();
+                    var flag=1;//标记写课程名字还是教室：1课程名，2教室
+                    for(var z=3;z<listTime[j].length-1;z++){
+                      if(listTime[j][z]!="节"){
+                        x=listTime[j][z];//第几节课
+                        var location = "#table-"+x+"-"+y;//定位在table中位置   
+                        
+                        if(flag===1){
+                          $(location).text(this.res[i].className.split("]")[1]);
+                          flag=2;
+                        }else if(flag===2){
+                          $(location).text(this.res[i].classRoom);
+                          flag=3;
+                        }
+                        $(location).css("background-color",color);
+                      }
+                    }                  
+                  }
+              }
+          })
+        },
+        
+        getMy(){
+		  $("td").css("background-color","white");
+          $("td").text("");
+              this.res=[
+{
+"classID": "108641",
+"className": "[CST3153A]物联网应用技术",
+"classTime": "1-16周，周一(AB节)",
+"classNumber": "43",
+"semester": "2018-2019学年春季学期",
+"classRoom": "D座207",
+"teacher": "周腾",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92226
+},
+{
+"classID": "108642",
+"className": "[CST3264A]计算理论导引",
+"classTime": "1-16周，周四(34节)",
+"classNumber": "45",
+"semester": "2018-2019学年春季学期",
+"classRoom": "D座306",
+"teacher": "于津",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92277
+},
+{
+"classID": "108644",
+"className": "[CST3455A]系统分析与设计",
+"classTime": "1-16周，周五(34节)",
+"classNumber": "41",
+"semester": "2018-2019学年春季学期",
+"classRoom": "G座304",
+"teacher": "方若宇",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92299
+},
+{
+"classID": "108646",
+"className": "[CST3452A]软件案例分析",
+"classTime": "1-16周，周四(AB节)",
+"classNumber": "40",
+"semester": "2018-2019学年春季学期",
+"classRoom": "D座207",
+"teacher": "张承钿",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92373
+},
+{
+"classID": "108649",
+"className": "[CST3306A]算法设计与分析",
+"classTime": "1-16周，周四(67节)",
+"classNumber": "100",
+"semester": "2018-2019学年春季学期",
+"classRoom": "D座503",
+"teacher": "陈银冬",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92466
+},
+{
+"classID": "108650",
+"className": "[CST3402A]计算机网络",
+"classTime": "1-16周，周三(34节)，周五(67节)",
+"classNumber": "55",
+"semester": "2018-2019学年春季学期",
+"classRoom": "E406",
+"teacher": "蔡伟鸿/林泽铭(实验)",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92594
+},
+{
+"classID": "108653",
+"className": "[CST3502A]数据库原理",
+"classTime": "1-16周，周二(890节)",
+"classNumber": "50",
+"semester": "2018-2019学年春季学期",
+"classRoom": "D座303",
+"teacher": "李新",
+"studentID": "2016101048",
+"studentName": "周伟鹏",
+"studentSex": "男",
+"major": "计算机科学与技术(2016)                                                          ",
+"id": 92704
+}
+]
+              // var re =JSON.stringify(json);//先转成字符串
+              // this.res=JSON.parse(re);//再转成数组
+              // console.log(this.res);
+
+              //遍历课程列表
+              for(var i=0;i<this.res.length;i++){
+                  //将每一项课程的上课时间分割出来
+                  var listTime = this.res[i].classTime.split("，");
+                  //console.log(typeof(this.res[i].className));
+                  console.log(listTime);
+                  //console.log(listTime.length);
+                  //上课时间列表第一个item是1-16周，故用不到，后面才是具体的上课时间
+                  for(var j=1;j<listTime.length;j++){
+                    var y="";
+                    var x="";
+                    //例如，时间列表：1-16周，周三(34节)，周五(67节)
+                    if(listTime[j][1]=='一'){
+                      y="1";//星期几
+                    }
+                    if(listTime[j][1]=='二'){
+                      y="2";//星期几
+                    }
+                    if(listTime[j][1]=='三'){
+                      y="3";//星期几
+                    }
+                    if(listTime[j][1]=='四'){
+                      y="4";//星期几
+                    }
+                    if(listTime[j][1]=='五'){
+                      y="5";//星期几
+                    }
+
+                    var color = this.getColor();
+                    var flag=1;//标记写课程名字还是教室：1课程名，2教室
+                    for(var z=3;z<listTime[j].length-1;z++){
+                      if(listTime[j][z]!="节"){
+                        x=listTime[j][z];//第几节课
+                        var location = "#table-"+x+"-"+y;//定位在table中位置   
+                        
+                        if(flag===1){
+                          $(location).text(this.res[i].className.split("]")[1]);
+                          flag=2;
+                        }else if(flag===2){
+                          $(location).text(this.res[i].classRoom);
+                          flag=3;
+                        }
+                        $(location).css("background-color",color);
+                      }
+                    }                  
+                  }
+              }
+          
+        }
+        
+      },
+      mounted:function(){
+        this.getMy();
+      }
+    });
+  </script>
+    
+    
+    
+
+</body>
+
+</html>
