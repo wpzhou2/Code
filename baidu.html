@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=q, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>百度搜索</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="page-header">
+            <h2 class="text-center text-warning">百度搜索</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" @keydown="baiduKeydown($event)" v-model="baiduKey" placeholder="人生一世">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default " v-on:click="baiduSearch" type="button">baidu</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" @keydown="googleKeydown($event)" placeholder="草木一秋" v-model="googleKey">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" v-on:click="googleSearch">google</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+
+    </div>
+</body>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.js" ></script>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            baiduKey:'',//搜索的关键词
+            googleKey:'',
+        },
+        methods:{
+            baiduKeydown(event){
+               if(event.keyCode==13){
+                    //如果你按的是enter，那么就跳转到百度搜索结果
+                    window.open("https://www.baidu.com/s?ie=UTF-8&wd="+this.baiduKey);
+                }
+
+            },
+            baiduSearch:function () {
+                window.open("https://www.baidu.com/s?ie=UTF-8&wd="+this.baiduKey);
+            },
+            googleKeydown(event){
+                if(event.keyCode==13){
+                    //如果你按的是enter，那么就跳转到百度搜索结果
+                    window.open("https://www.google.com/search?ei=Ro1iXKeZFYHv-Qaiq5bYDg&q="+this.googleKey+"&oq="+this.googleKey+"&gs_l=psy-ab.3...19091.20223..20527...0.0..0.107.586.4j2......0....1..gws-wiz.....0..0j0i131j0i3j0i10.SL-QUX5Y6Fg");
+                }
+
+            },
+            googleSearch:function () {
+                window.open("https://www.google.com/search?ei=Ro1iXKeZFYHv-Qaiq5bYDg&q="+this.googleKey+"&oq="+this.googleKey+"&gs_l=psy-ab.3...19091.20223..20527...0.0..0.107.586.4j2......0....1..gws-wiz.....0..0j0i131j0i3j0i10.SL-QUX5Y6Fg");
+            }
+        }
+    });
+</script>
+</html>

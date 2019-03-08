@@ -26,7 +26,7 @@
     <div class="row app">
         <div class="col-lg-6">
             <div class="input-group">
-                <input type="text" class="form-control" @keydown="baiduKeydown($event)" v-model="baiduKey" placeholder="人生一世">
+                <input type="text" class="form-control" @keydown="baiduKeydown($event)" v-model="baiduKey" placeholder="何时得遂田园乐">
                 <span class="input-group-btn">
                         <button class="btn btn-default " v-on:click="baiduSearch" type="button">baidu</button>
                     </span>
@@ -35,7 +35,7 @@
 
         <div class="col-lg-6">
             <div class="input-group">
-                <input type="text" class="form-control" @keydown="googleKeydown($event)" placeholder="草木一秋" v-model="googleKey">
+                <input type="text" class="form-control" @keydown="googleKeydown($event)" placeholder="睡到人间熟饭时" v-model="googleKey">
                 <span class="input-group-btn">
                         <button class="btn btn-default" type="button" v-on:click="googleSearch">google</button>
                     </span>
@@ -71,6 +71,10 @@
 		<a href="http://www.lib.stu.edu.cn/"  class="btn btn-info kongwei" target="_blank">图书馆</a>
 		<a href="http://oa.stu.edu.cn/login/Login.jsp?logintype=1"  class="btn btn-success kongwei" target="_blank">办公自动化</a>
 		<a href="https://partner.outlook.cn/owa/?realm=stu.edu.cn&exsvurl=1&ll-cc=2052&modurl=0"  class="btn btn-primary kongwei" target="_blank">汕大邮箱</a>
+		<a href="https://book.douban.com/"  class="btn btn-default kongwei" target="_blank">豆瓣</a>
+		<a href="D:/Users/IdeaProjects/Biao_Yan_Su/bootstrap/projects/course_timetable.html"  class="btn btn-danger kongwei" target="_blank">课程表</a>
+		<a href="https://leetcode-cn.com/problemset/database/"  class="btn btn-info kongwei" target="_blank">LeetCode</a>
+		<a href="http://online.zhihuishu.com/onlineSchool/student/index"  class="btn btn-warning kongwei" target="_blank">智慧树</a>
     </div>
 
 
